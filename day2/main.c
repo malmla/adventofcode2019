@@ -9,7 +9,7 @@ int* work_memory;
 void set_work_memory(int noun, int verb)
 {
 	unsigned int index = 0;
-	for(index; index<memory_length; index++)
+	for(index = 0; index<memory_length; index++)
 	{
 		work_memory[index] = saved_memory[index];
 	}
@@ -62,8 +62,6 @@ void find_noun_verb()
 			}
 		}
 	}
-
-	free(work_memory);
 }
 
 
@@ -102,6 +100,7 @@ int main(void)
 	find_noun_verb();
 	//compute(saved_memory);
 
+	free(work_memory);
 	free(saved_memory);
 
 }
